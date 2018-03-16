@@ -1,0 +1,27 @@
+{
+  "name": "afanneau.fr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/afanneau42/afanneau.fr.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/afanneau42/afanneau.fr/issues"
+  },
+  "homepage": "https://github.com/afanneau42/afanneau.fr#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "expressjs": "^1.0.1",
+    "nodejs": "0.0.0",
+    "nodemon": "^1.17.2",
+    "npm": "^5.7.1"
+  }
+}
