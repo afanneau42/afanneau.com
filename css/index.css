@@ -2,3 +2,124 @@
     width: 500px;
     height: 500px;
 }
+
+body {
+    background-color: hsl(0, 0%, 15%);
+}
+
+.name1 {
+    color: white;
+    font-size: 3vh;
+    opacity: 0.9;
+}
+
+.name2 {
+    color: white;
+    font-weight: bold;
+    font-size: 5vh;
+}
+
+body::-webkit-scrollbar {
+    width: 1em;
+}
+ 
+/* body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+} */
+ 
+body::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+
+.first-slide {
+   background-repeat:no-repeat;
+   background: radial-gradient( #444 , #111);
+   -webkit-background: radial-gradient( #444 , #111);
+   -moz-background: radial-gradient( #444 , #111);
+   -o-background: radial-gradient( #444 , #111);
+}
+
+.second-slide {
+    background: url('http://2.bp.blogspot.com/_JMz4Od33E-k/TLRldDdvMiI/AAAAAAAADkM/FBf20y--mbQ/s1600/Work_in_progress.svg.png');
+    background-size: 40vh 35vh;    
+    background-repeat:no-repeat;    
+    background-attachment: fixed;
+    background-position: center;        
+    background-position-x: 38vw;    
+    background-color: white;
+    
+}
+
+.slide {
+   height: 100vh;
+   align-items: center;
+   justify-content: center;
+}
+
+.name-div {
+    /* background-color: hsl(0, 0%, 15%); */
+    height: 25vh;
+    width: 50vh;
+    opacity: 1;
+
+    animation: appears 1s;
+    animation-timing-function: ease-in;
+}
+
+@keyframes appears {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.introduce {
+    position: absolute;
+    bottom: 3vw;
+    color: white;
+    opacity: 0.8;
+    width: 20vw;
+    animation: appears 1.5s;
+    /* animation-delay: 0.3s; */
+    animation-timing-function: ease-in;
+
+}
+
+.introduce-text {
+    font-size: 3vh;    
+    opacity: 0.9;
+    /* transition: opacity 1s ease;    */
+}
+
+.introduce:hover {
+    cursor: pointer;
+}
+
+.arrow{
+    top: 1.5vh;
+    font-size: 3vh;    
+    opacity: 0.25;
+    position:relative;
+    animation: arrow 2s infinite; 
+    /* text-shadow: 5px 5px 2px black; */
+}
+
+@keyframes arrow {
+    0% {
+        top: 0;
+        opacity: 0;
+    }
+    90% {
+        top: 1.5vh;
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.wip {
+    font-size: 3vw;
+    color: black;
+    position: relative;
+    bottom: 3vw;
+}
