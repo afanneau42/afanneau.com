@@ -1,22 +1,32 @@
+@font-face {
+    font-family: "jura";
+    src: url('../ressources/jura/Jura-Regular.ttf') format("truetype");
+  }
+
 #test {
     width: 500px;
     height: 500px;
 }
 
 body {
-    background-color: hsl(0, 0%, 15%);
+    /* background-color: hsl(0, 0%, 15%); */
+    background-color: white;
 }
 
 .name1 {
     color: white;
+    /* color: #222;     */
     font-size: 3vh;
     opacity: 0.9;
+    letter-spacing: 3px;
 }
 
 .name2 {
     color: white;
+    /* color: #222;         */
     font-weight: bold;
     font-size: 5vh;
+    letter-spacing: 5px;
 }
 
 body::-webkit-scrollbar {
@@ -33,22 +43,33 @@ body::-webkit-scrollbar-thumb {
 }
 
 .first-slide {
-   background-repeat:no-repeat;
-   background: radial-gradient( #444 , #111);
+    background-repeat:no-repeat;
+    background-image: url('../ressources/sky.png');
+    background-size: cover;
+    font-family: 'jura', sans-serif;
+
+    z-index: 1;
+    box-shadow: 2px 2px 20px black;
+
+   /* background: radial-gradient(  white, #AAA);
+   -webkit-background: radial-gradient(   white,#AAA);
+   -moz-background: radial-gradient(  white,#AAA);
+   -o-background: radial-gradient( white,#AAA); */
+   /* background: radial-gradient( #444 , #111);
    -webkit-background: radial-gradient( #444 , #111);
    -moz-background: radial-gradient( #444 , #111);
-   -o-background: radial-gradient( #444 , #111);
+   -o-background: radial-gradient( #444 , #111); */
 }
 
 .second-slide {
-    background: url('http://2.bp.blogspot.com/_JMz4Od33E-k/TLRldDdvMiI/AAAAAAAADkM/FBf20y--mbQ/s1600/Work_in_progress.svg.png');
+    /* background: url('http://2.bp.blogspot.com/_JMz4Od33E-k/TLRldDdvMiI/AAAAAAAADkM/FBf20y--mbQ/s1600/Work_in_progress.svg.png'); */
     background-size: 40vh 35vh;    
     background-repeat:no-repeat;    
     background-attachment: fixed;
     background-position: center;        
-    background-position-x: 38vw;    
+    background-position-x: 39.5vw;    
     background-color: white;
-    
+    z-index: -1;    
 }
 
 .slide {
@@ -75,23 +96,43 @@ body::-webkit-scrollbar-thumb {
 .introduce {
     position: absolute;
     bottom: 3vw;
+    /* color: white; */
     color: white;
     opacity: 0.8;
-    width: 20vw;
-    animation: appears 1.5s;
+    width: 30vw;
+    animation: appears2 1.5s;
     /* animation-delay: 0.3s; */
     animation-timing-function: ease-in;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
 
+@keyframes appears2 {
+    from {opacity: 0;}
+    to {opacity: 0.8;}
 }
 
 .introduce-text {
     font-size: 3vh;    
-    opacity: 0.9;
+    opacity: 0.8;
+    letter-spacing: 3px;
     /* transition: opacity 1s ease;    */
 }
 
 .introduce:hover {
     cursor: pointer;
+}
+
+.introduce:hover .introduce-text{
+    animation-duration: 0.3s;
+    animation-name: wave;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes wave {
+    from { transform : translateY(0); }
+    to   { transform : translateY(-10px); }
 }
 
 .arrow{
@@ -119,7 +160,84 @@ body::-webkit-scrollbar-thumb {
 
 .wip {
     font-size: 3vw;
-    color: black;
+    color: #222;
     position: relative;
     bottom: 3vw;
+}
+
+.dots {
+    height: 10vh;
+    position: fixed;
+    right: 10px;
+    top: 40vh;
+    z-index: 0;
+    list-style: none;
+    letter-spacing: 1.1px;
+    font-size: 1vh;
+}
+.dots li {
+    margin: 1vh 0 1vh 0;
+}
+
+.dots a {
+    color: rgba(255,255,255, 0);   
+    background-color: transparent;
+    box-shadow: inset 0 0 0 1px #ccc;
+    border-radius: 50%;
+    overflow: hidden;
+    min-width: 0.7vw;
+    max-width: 0.7vw;    
+    min-height: 0.7vw;    
+    max-height: 0.7vw;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    -webkit-transform: scale3d(0.8, 0.8, 0.8);
+    transform: scale3d(0.8, 0.8, 0.8);
+} 
+
+.dots .active {
+    -webkit-transform: scale3d(1.4, 1.4, 1.4);
+    transform: scale3d(1.4, 1.4, 1.4);
+}
+
+.dots a:hover {
+    box-shadow: inset 0 0 0 2px #AAA;  
+}
+
+.resume-div {
+    /* position: relative; */
+    /* bottom: 0; */
+    /* height: 90vh; */
+    text-align: center;
+    padding: 10vh 5vw 10vh 5vw;
+    line-height: 6vh;
+}
+
+.resume {
+    color: #888;
+    font-size: 2.5vh;
+    letter-spacing: 1.3px;
+}
+
+.resume a:hover {
+    cursor: pointer;
+}
+
+.introduced_before {
+    opacity: 0;
+    -webkit-transition: all 1.5s ease-out;
+    -moz-transition: all 1.5s ease-out;
+    transition: all 1.5s ease-out;
+    position: relative;
+    top: 15vh;
+}
+
+.introduced {
+    opacity: 1;
+    top: 0vh;
+}
+
+.third-slide {
+    background-color: black;
+    z-index: -1;
 }

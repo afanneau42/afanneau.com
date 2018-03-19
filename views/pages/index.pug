@@ -4,7 +4,7 @@ head
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js'></script>
     //- link(rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css")
-    link(rel="stylesheet" href="https://bootswatch.com/4/sketchy/bootstrap.min.css")
+    link(rel="stylesheet" href="https://bootswatch.com/4/cosmo/bootstrap.min.css")
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,11 +15,24 @@ head
     script(src='js/index.js')
 body
     div.row.w-100.m-0
-        div#first-div.col-12.first-slide.d-flex.pr-0.slide
+        div#dots.dots
+            <div class="table">
+                <div class="cell">
+                    <ul class="dots">
+                    <li><a id = 'li1' href="#">12</a></li>
+                    <li><a id = 'li2' href="#">22</a></li>
+                    <li><a id = 'li3' href="#">32</a></li>
+                    <li><a id = 'li4' href="#">42</a></li>
+                    <li><a id = 'li5' href="#">52</a></li>
+                    <li><a id = 'li6' href="#">62</a></li>
+                    </ul>
+                </div>
+            </div>
+        div#first-div.col-12.first-slide.d-flex.slide
             div.name-div
                 div.row.h-25 
                     div.col-12            
-                        h3.name1.text-center Hi i'm
+                        h3.name1.text-center Hi I'm
                 div.row.h-75
                     div.col-12
                         h1.name2.text-center Arthur Fanneau
@@ -30,12 +43,15 @@ body
                     div.col-12
                         h1.text-center.arrow ▼
                             
-        div#second-div.col-12.slide.second-slide.d-flex.pr-0
-            div.introduce#introduced
-                div.row.h-100
-                    div.col-12
-                        h1.wip.text-center Work in progress
-
+        div#second-div.col-12.slide.second-slide.d-flex
+            //- div.introduce#introduced
+            div.row.w-100.h-100#introduced
+                div.col-1.col-md-3                
+                div.col-10.col-md-6#resume_div.resume-div.introduced_before
+                    <p class='resume'> I am a 21 years old developper studying at <b>42 Paris</b>. </p><p class='resume'>I'm currently learning <b>web development</b> (NodeJS, React, CSS) and really intersted in web design, UX, UI.</p><p class='resume'>I'm looking for inspiring startups to join for my <b>first internship</b> (May/June 2018 to September/December 2018).</p>
+                div.col-1.col-md-3                
+        div#third-div.col-12.slide.third-slide.d-flex
+                    
     //- div(style="height:10000px")#main
         h1 t
     //- div.h-100.w-100
