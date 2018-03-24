@@ -9,13 +9,11 @@
 }
 
 body {
-    /* background-color: hsl(0, 0%, 15%); */
     background-color: white;
 }
 
 .name1 {
     color: white;
-    /* color: #222;     */
     font-size: 3vh;
     opacity: 0.9;
     letter-spacing: 3px;
@@ -23,7 +21,6 @@ body {
 
 .name2 {
     color: white;
-    /* color: #222;         */
     font-weight: bold;
     font-size: 5vh;
     letter-spacing: 5px;
@@ -32,10 +29,6 @@ body {
 body::-webkit-scrollbar {
     width: 1em;
 }
- 
-/* body::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-} */
  
 body::-webkit-scrollbar-thumb {
   background-color: darkgrey;
@@ -47,29 +40,20 @@ body::-webkit-scrollbar-thumb {
     background-image: url('../ressources/sky.png');
     background-size: cover;
     font-family: 'jura', sans-serif;
-
-    z-index: 1;
+    z-index: 3;
     box-shadow: 2px 2px 20px black;
-
-   /* background: radial-gradient(  white, #AAA);
-   -webkit-background: radial-gradient(   white,#AAA);
-   -moz-background: radial-gradient(  white,#AAA);
-   -o-background: radial-gradient( white,#AAA); */
-   /* background: radial-gradient( #444 , #111);
-   -webkit-background: radial-gradient( #444 , #111);
-   -moz-background: radial-gradient( #444 , #111);
-   -o-background: radial-gradient( #444 , #111); */
 }
 
 .second-slide {
-    /* background: url('http://2.bp.blogspot.com/_JMz4Od33E-k/TLRldDdvMiI/AAAAAAAADkM/FBf20y--mbQ/s1600/Work_in_progress.svg.png'); */
     background-size: 40vh 35vh;    
     background-repeat:no-repeat;    
     background-attachment: fixed;
     background-position: center;        
     background-position-x: 39.5vw;    
     background-color: white;
-    z-index: -1;    
+    z-index: 0;
+    padding-top: 2vw;
+    padding-bottom: 2vw;
 }
 
 .slide {
@@ -79,11 +63,9 @@ body::-webkit-scrollbar-thumb {
 }
 
 .name-div {
-    /* background-color: hsl(0, 0%, 15%); */
     height: 25vh;
     width: 50vh;
     opacity: 1;
-
     animation: appears 1s;
     animation-timing-function: ease-in;
 }
@@ -101,7 +83,6 @@ body::-webkit-scrollbar-thumb {
     opacity: 0.8;
     width: 30vw;
     animation: appears2 1.5s;
-    /* animation-delay: 0.3s; */
     animation-timing-function: ease-in;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
@@ -116,14 +97,20 @@ body::-webkit-scrollbar-thumb {
     font-size: 3vh;    
     opacity: 0.8;
     letter-spacing: 3px;
-    /* transition: opacity 1s ease;    */
 }
 
-.introduce:hover {
+.introduce:hover, .project-button:hover {
     cursor: pointer;
 }
 
 .introduce:hover .introduce-text{
+    animation-duration: 0.3s;
+    animation-name: wave;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.introduce:active .introduce-text{
     animation-duration: 0.3s;
     animation-name: wave;
     animation-iteration-count: infinite;
@@ -141,7 +128,6 @@ body::-webkit-scrollbar-thumb {
     opacity: 0.25;
     position:relative;
     animation: arrow 2s infinite; 
-    /* text-shadow: 5px 5px 2px black; */
 }
 
 @keyframes arrow {
@@ -170,7 +156,7 @@ body::-webkit-scrollbar-thumb {
     position: fixed;
     right: 10px;
     top: 40vh;
-    z-index: 0;
+    z-index: 2;
     list-style: none;
     letter-spacing: 1.1px;
     font-size: 1vh;
@@ -205,18 +191,22 @@ body::-webkit-scrollbar-thumb {
 }
 
 .resume-div {
-    /* position: relative; */
-    /* bottom: 0; */
-    /* height: 90vh; */
     text-align: center;
     padding: 10vh 5vw 10vh 5vw;
-    line-height: 6vh;
+    line-height: 5vh;
 }
 
 .resume {
     color: #888;
     font-size: 2.5vh;
     letter-spacing: 1.3px;
+    margin-top: 3vw;
+    margin-bottom: 3vw;    
+}
+
+.resume a {
+    color: #888;
+    text-decoration: none;
 }
 
 .resume a:hover {
@@ -225,11 +215,11 @@ body::-webkit-scrollbar-thumb {
 
 .introduced_before {
     opacity: 0;
+    position: relative;
+    top: 15vh;
     -webkit-transition: all 1.5s ease-out;
     -moz-transition: all 1.5s ease-out;
     transition: all 1.5s ease-out;
-    position: relative;
-    top: 15vh;
 }
 
 .introduced {
@@ -238,6 +228,103 @@ body::-webkit-scrollbar-thumb {
 }
 
 .third-slide {
-    background-color: black;
-    z-index: -1;
+    background-color: #2c2c36;
+    z-index: 1;
+}
+
+.attributes {
+    color: orangered;
+    font-size: 0.5vw;
+    letter-spacing: 1.3px;
+    opacity: 0.8;
+    margin-top: 3vh;
+}
+
+.attr-div {
+    box-shadow: 0px 0px 1px orangered;
+    border-radius: 50%;
+    line-height:25px; 
+    margin: 3vh auto 10vh auto;
+    /* position:/ absolute; */
+    display: table;
+    width: 125px;
+    height: 125px;
+}
+.attr-div p {
+    font-size: 1vw;
+    display: table-cell; 
+    vertical-align: middle; 
+    text-align: center; 
+}
+
+.project-button {
+    text-align: center;
+    font-size: 1.5vw;
+    height: 5vh;    
+    opacity: 0.8;
+}
+
+.project-button div {
+    /* border-radius: 100%; */
+    border-radius: 2px;
+    width: 5vw;
+    height: 2vw;
+    line-height: 2vw;
+}
+
+.project-button:hover .project-button-txt{
+    animation-duration: 0.3s;
+    animation-name: wave;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@media screen and (min-width: 1200px) {
+    /* .attributes {
+        font-size: 1.5vw;
+    } */
+}        
+
+@media screen and (max-width: 1200px) {
+    .attr-div {
+        width: 100px;
+        height: 100px;
+    }
+    .project-button div {
+        width: 10vw;
+        height: 4vw;
+        line-height: 4vw;
+    }
+    .project-button {
+        left: calc(50% - 3vw);
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .dots {
+        display: none;
+    }
+    .attr-div {
+        width: 75px;
+        height: 75px;
+    }
+    .prevent-hiding-url-bot {
+        margin-bottom: 10vh;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .resume {
+        font-size: 3.5vw;
+    }
+    .attr-div {
+        margin: 3.5vh auto 4vh auto;
+    }
+    .attr-div p {
+        font-size: 2vw;
+        line-height: 3vw;   
+    }
+    .project-button h1{
+        font-size: 4vw;
+    }
 }

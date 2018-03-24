@@ -36,7 +36,7 @@ body
                 div.row.h-75
                     div.col-12
                         h1.name2.text-center Arthur Fanneau
-            div.introduce#introduce
+            div.introduce#introduce.prevent-hiding-url-bot
                 div.row
                     div.col-12
                         h1.text-center.introduce-text let me introduce myself
@@ -48,7 +48,21 @@ body
             div.row.w-100.h-100#introduced
                 div.col-1.col-md-3                
                 div.col-10.col-md-6#resume_div.resume-div.introduced_before
-                    <p class='resume'> I am a 21 years old developper studying at <b>42 Paris</b>. </p><p class='resume'>I'm currently learning <b>web development</b> (NodeJS, React, CSS) and really intersted in web design, UX, UI.</p><p class='resume'>I'm looking for inspiring startups to join for my <b>first internship</b> (May/June 2018 to September/December 2018).</p>
+                    div
+                        <p class='resume'> I am a 21 years old developper studying at <a href='https://www.42.fr'><b>42 Paris</b></a>. </p><p class='resume'>I'm currently learning <b>web developement</b> (NodeJS, React, CSS) and really intersted in web design, UX, UI.</p><p class='resume'>I'm looking to join a nice and inspiring team for my <b>first internship</b> (May/June 2018 to September/December 2018).</p>
+                    div.attributes.row
+                        div.attr-div
+                            <p class=''>English speaker</p>
+                        div.attr-div
+                            <p class=''>Curious about everything</p>
+                        div.attr-div
+                            <p class=''>Music lover</p>
+                    div#project-button.project-button.row.prevent-hiding-url-bot
+                            div.col-12.h-75        
+                                h1.project-button-txt My projects    
+                            div.col-12.h-25
+                                h1.text-center.arrow ▼
+                                                
                 div.col-1.col-md-3                
         div#third-div.col-12.slide.third-slide.d-flex
                     
