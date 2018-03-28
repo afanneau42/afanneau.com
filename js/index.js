@@ -1,4 +1,9 @@
 $(document).ready(() => {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-116543471-1');
+
     let third_slide_state = 0;
     function animation_third_slide() {
         if (third_slide_state === 0) {
