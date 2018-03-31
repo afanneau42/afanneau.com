@@ -1,4 +1,5 @@
 $(document).ready(() => {
+    let projState = 0;
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
@@ -9,8 +10,6 @@ $(document).ready(() => {
         if (third_slide_state === 0) {
             third_slide_state = 1;
             $('#test2').css('background', '#2c2c36');
-            // $('#test2').css('top', '0');
-            
         }
     }
 
@@ -28,6 +27,8 @@ $(document).ready(() => {
 
     $(this).scrollTop(0);
 
+    sizeProj()
+
     $(window).scroll(() => {
         let yPos = $(window).scrollTop()
         if (yPos < 20) {
@@ -38,7 +39,15 @@ $(document).ready(() => {
             $('#introduce').removeClass('prevent-hiding-url-bot');
             $('#remove').addClass('prevent-hiding-url-bot');                        
         }
-        if (yPos >= $('#third-div').offset().top - ($('#second-div').height() * 0.15)) {
+        if (yPos >= $('#fourth-div').offset().top - ($('#second-div').height() * 0.15)) {
+            $('.active').removeClass('active');
+            $('#li4').parent().addClass('active');
+            $('#resume_div').removeClass('introduced');
+            $('#attributes').addClass('attributes_before');            
+            $('#project-button').css('opacity', '0');        
+            animation_fourth_slide();
+        }
+        else if (yPos >= $('#third-div').offset().top - ($('#second-div').height() * 0.15)) {
             $('.active').removeClass('active');
             $('#li3').parent().addClass('active');
             $('#resume_div').removeClass('introduced');
@@ -60,7 +69,6 @@ $(document).ready(() => {
             $('#attributes').addClass('attributes_before'); 
             $('#project-button').css('opacity', '0');  
         }
-      
     })
     $('#introduce').click(() => {
         goToByScroll('second-div')
@@ -84,4 +92,53 @@ $(document).ready(() => {
     $('#li3').click(function() {
         goToByScroll('third-div')
     })
+    $('#li4').click(function() {
+        goToByScroll('fourth-div')
+    })
+
+    
+    var width = $(window).width();
+    $(window).on('resize', function(){
+       if($(this).width() != width){
+            width = $(this).width();
+            $(window).resize(sizeProj());
+       }
+    });
+    function sizeProj() {
+        if ($(window).width() >= 990 && projState != 2) {
+            console.log(projState +' 2')
+            projState = 2;
+            $("#proj-info-2-2").empty();
+            $("#proj-info-4-2").empty();       
+            $("#proj-info-4-1, #proj-info-2-1").addClass('col-proj-inf')    
+            $("#proj-info-4-2, #proj-info-2-2").removeClass('col-proj-inf')    
+            $("#proj-info-2-1").append("\
+                <div class='div-proj-info'>\
+                    <h5> Second web project at 42. A website like meetic, find someone around you with same interests, match with him to begin to chat.</h5>\
+                    <h4> NodeJS, JS, mySQL</h4>\
+            ")
+            $("#proj-info-4-1").append("\
+                <div class='div-proj-info'>\
+                    <h5> WIP Side project where I try to improve my skill in webdesign, you are currently navigating on it, do you like it ?</h5>\
+                    <h4> NodeJS, JS, CSS, Bootstrap</h4>\
+            ")
+        } else if ($(window).width() < 990 && projState != 1) {
+            console.log(projState + ' 1')            
+            projState = 1;
+            $("#proj-info-2-1").empty();
+            $("#proj-info-4-1").empty();        
+            $("#proj-info-4-1, #proj-info-2-1").removeClass('col-proj-inf')    
+            $("#proj-info-4-2, #proj-info-2-2").addClass('col-proj-inf')    
+            $("#proj-info-2-2").append("\
+                <div class='div-proj-info'>\
+                    <h5> Second web project at 42. A website like meetic, find someone around you with same interests, match with him to begin to chat.</h5>\
+                    <h4> NodeJS, JS, mySQL</h4>\
+            ")
+            $("#proj-info-4-2").append("\
+                <div class='div-proj-info'>\
+                    <h5> WIP Side project where I try to improve my skill in webdesign, you are currently navigating on it, do you like it ?</h5>\
+                    <h4> NodeJS, JS, CSS, Bootstrap</h4>\
+            ")
+        }
+    }
 })
