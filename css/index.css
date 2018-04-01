@@ -324,11 +324,26 @@ body::-webkit-scrollbar-thumb {
     z-index: 100;
     box-shadow: 0 0 25px rgba(255, 255, 255, 0.15);
     transition: all 0.5s ease-out ;
+    animation: glow 1s infinite alternate;
+    background-image: url(/ressources/github_icon.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 0px;
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 25px rgba(255, 255, 255, 0.05);
+    } to {
+        box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
+    };
 }
 
 .project-circle:hover {
     cursor: pointer;
     box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
+    background-size: 50px;
+    color: rgba(255, 255, 255, 0)
 }    
 
 .test::before {
@@ -350,6 +365,7 @@ body::-webkit-scrollbar-thumb {
 
 .fourth-slide {
     z-index: 3;
+    height: 95vh;
     background-color: white;
     flex-direction: row;
     flex-wrap: wrap;
@@ -357,7 +373,7 @@ body::-webkit-scrollbar-thumb {
 
 .fourth-slide h1 {
     text-align: center;
-    margin-top: 35vh;
+    /* margin-top: 35vh; */
 }
 
 .col-cicrcle {
@@ -401,13 +417,63 @@ body::-webkit-scrollbar-thumb {
 }
 
 .contact_text {
-    font-size: 5vw;
+    /* font-size: 3vw; */
     color: #777;
     letter-spacing: 2px;
+    opacity: 1;
+}
+
+.div_contact_img {
+    display: flex;
+    justify-content: space-around;
+}
+
+.contact_mail:hover {
+    cursor: pointer;
+}
+
+.div_contact_all {
+    width: 300px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.div_contact {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .contact_link {
     z-index: 5;
+}
+
+.footer {
+    /* position: fixed; */
+    /* bottom: 0; */
+    background-color: black;
+    color: white;
+    justify-content: center;
+    z-index: 5;
+    height: 5vh;
+}
+
+.footer h4 {
+    text-align: center;
+    margin: auto;
+}
+
+.div_contact_img img {
+    transform: scale3d(0.7, 0.7, 0.7);    
+    transition: all 0.5s ease-out;
+}
+
+.div_contact_img img:hover {
+    transform: scale3d(0.9, 0.9, 0.9);
 }
 
 @media screen and (min-width: 1600px) {
