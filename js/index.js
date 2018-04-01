@@ -45,7 +45,7 @@ $(document).ready(() => {
             $('#resume_div').removeClass('introduced');
             $('#attributes').addClass('attributes_before');            
             $('#project-button').css('opacity', '0');        
-            animation_fourth_slide();
+            // animation_fourth_slide();
         }
         else if (yPos >= $('#third-div').offset().top - ($('#second-div').height() * 0.15)) {
             $('.active').removeClass('active');

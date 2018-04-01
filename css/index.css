@@ -406,6 +406,10 @@ body::-webkit-scrollbar-thumb {
     letter-spacing: 2px;
 }
 
+.contact_link {
+    z-index: 5;
+}
+
 @media screen and (min-width: 1600px) {
     .col-proj-info {
         height: 50%;
