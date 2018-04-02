@@ -136,7 +136,7 @@ $(document).ready(() => {
             ");
             $("#proj-info-4-2").append("\
                 <div class='div-proj-info'>\
-                    <h5> WIP Side project where I try to improve my skill in webdesign, you are currently navigating on it, do you like it ?</h5>\
+                    <h5> Side project, afanneau.com, where I try to improve my skill in webdesign, you are currently navigating on it, are you liking it ?</h5>\
                     <h4> NodeJS, JS, CSS, Bootstrap</h4>\
             ");
             $('#img_linkedin').attr('src', '/ressources/linkedin_icon_32.png');

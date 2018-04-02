@@ -262,7 +262,6 @@ body::-webkit-scrollbar-thumb {
     border-radius: 50%;
     line-height:25px; 
     margin: 3vh auto 10vh auto;
-    /* position:/ absolute; */
     display: table;
     width: 125px;
     height: 125px;
