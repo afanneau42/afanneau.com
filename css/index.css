@@ -425,6 +425,13 @@ body::-webkit-scrollbar-thumb {
     display: flex;
     justify-content: space-around;
 }
+/* 
+.copy_svg {
+} */
+
+/* .contact_mail { */
+    /* font-size: 1.2rem; */
+/* }     */
 
 .contact_mail:hover {
     cursor: pointer;
@@ -583,7 +590,7 @@ body::-webkit-scrollbar-thumb {
         background-image: url('../ressources/sky1280.jpg');
     }
 }
-@media screen and (max-width: 1920px) and (min-width: 1281px) {
+@media screen and (min-width: 1281px) {
     .first-slide {
         background-image: url('../ressources/sky1920.jpg');
     }
